@@ -1,0 +1,5 @@
+node_modules/
+.tmp/
+3d/*.stl
+3d/*.glb
+index-offline.html
