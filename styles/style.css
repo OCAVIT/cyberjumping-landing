@@ -434,7 +434,7 @@ body::after {
 
 .showcase__specs {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 0;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
@@ -446,13 +446,10 @@ body::after {
     gap: 1rem;
     padding: .85rem 1rem;
     border-bottom: 1px solid var(--line);
-    border-right: 1px solid var(--line);
     font-size: .92rem;
     color: var(--ink-mute);
 }
-.showcase__specs li:nth-child(odd)  { border-right: 1px solid var(--line); }
-.showcase__specs li:nth-child(even) { border-right: none; }
-.showcase__specs li:nth-last-child(-n+2) { border-bottom: 0; }
+.showcase__specs li:last-child { border-bottom: 0; }
 .showcase__specs .mono { font-family: var(--f-mono); color: var(--ink-dim); font-size: .78rem; letter-spacing: .04em; }
 .showcase__specs b { color: var(--lime); font-family: var(--f-display); font-weight: 800; font-size: 1.1em; padding: 0 .15em; }
 
@@ -544,6 +541,9 @@ body::after {
     transition: background .25s var(--easing), padding-left .25s var(--easing);
 }
 .fact:hover { background: rgba(212,255,0,.03); padding-left: .75rem; }
+@media (hover: none) {
+    .fact.is-active { background: rgba(212,255,0,.03); padding-left: .75rem; }
+}
 .fact__num {
     font-family: var(--f-display);
     font-weight: 900;

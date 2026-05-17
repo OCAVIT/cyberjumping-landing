@@ -468,6 +468,7 @@ diffuseColor.rgb  = mix(diffuseColor.rgb, _cBright, _rim*0.12);`
     let lastT = 0;
 
     function loop(t) {
+        if (!showcaseActive) { rafId = null; return; }
         const dt = lastT ? Math.min((t - lastT) / 1000, 0.05) : 0;
         lastT = t;
 
@@ -518,9 +519,16 @@ diffuseColor.rgb  = mix(diffuseColor.rgb, _cBright, _rim*0.12);`
         }
 
         renderer.render(scene, camera);
-        requestAnimationFrame(loop);
+        rafId = requestAnimationFrame(loop);
     }
-    requestAnimationFrame(loop);
+
+    let rafId = null;
+    let showcaseActive = false;
+    new IntersectionObserver((entries) => {
+        const on = entries[0].isIntersecting;
+        showcaseActive = on;
+        if (on && !rafId) { lastT = 0; rafId = requestAnimationFrame(loop); }
+    }, { rootMargin: '300px 0px' }).observe(frame);
 }
 </script>
 </body>
