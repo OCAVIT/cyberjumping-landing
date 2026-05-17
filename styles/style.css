@@ -117,6 +117,11 @@ body::after {
     margin-top: .2rem;
     letter-spacing: .12em; text-transform: uppercase;
 }
+@media (max-width: 440px) {
+    .brand__line2 { display: none; }
+    .brand__line1 { font-size: .92rem; }
+    .brand__mark svg { width: 26px; height: 26px; }
+}
 .accent { color: var(--hot); }
 
 .social { display: inline-flex; gap: .25rem; }
@@ -315,7 +320,8 @@ body::after {
 .btn--primary:hover::after { transform: translateX(120%); }
 .btn__bolt {
     display: inline-block;
-    font-size: 1.15em;
+    font-size: 1.4em;
+    line-height: 1;
     filter: drop-shadow(0 0 10px rgba(255,255,255,.65));
 }
 
@@ -809,7 +815,7 @@ body::after {
     transform: translateY(0);
     transition: transform .35s var(--easing), opacity .25s var(--easing);
 }
-.sticky-cta__bolt { font-size: 1.1em; }
+.sticky-cta__bolt { font-size: 1.35em; line-height: 1; }
 .sticky-cta:hover { transform: translateY(-2px); }
 
 /* hide on desktop — the inline CTAs are enough */
