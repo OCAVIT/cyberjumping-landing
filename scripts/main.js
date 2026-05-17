@@ -31,7 +31,7 @@ if (matchMedia('(hover: none)').matches) {
     const factObs = new IntersectionObserver((entries) => {
         for (const entry of entries)
             entry.target.classList.toggle('is-active', entry.isIntersecting);
-    }, { rootMargin: '-30% 0px -30% 0px', threshold: 0 });
+    }, { rootMargin: '-38% 0px -38% 0px', threshold: 0 });
     for (const el of document.querySelectorAll('.fact')) factObs.observe(el);
 }
 
