@@ -634,6 +634,11 @@ body::after {
     gap: 2rem;
 }
 .address__head, .address__map { min-width: 0; }
+@media (max-width: 520px) {
+    .address .display--mid {
+        font-size: clamp(1.15rem, 5.5vw, 1.7rem);
+    }
+}
 @media (min-width: 960px) {
     .address { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 }
